@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .app {
   height: 500px;
@@ -86,10 +89,10 @@ p {
   margin-left: 10px;
   font-size: 10px;
 }
-.settings--heading{
+/* .settings--heading{
  margin-left: 20%;
  margin-top: 30%;
 
 
   
-}
+} */

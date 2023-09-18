@@ -8,6 +8,7 @@ import { Add } from "./components/Pages/Add";
 import { Files } from "./components/Pages/Files";
 import { Settings } from "./components/Pages/Settings";
 
+
 function App() {
   return (
     <div className="app">
