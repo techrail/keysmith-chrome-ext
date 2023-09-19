@@ -1,4 +1,3 @@
-import { Dropdown } from "./components/Dropdown";
 import "./App.css";
 import { Footer } from "./components/Footer";
 import { Routes, Route } from "react-router-dom";
@@ -8,11 +7,9 @@ import { Add } from "./components/Pages/Add";
 import { Files } from "./components/Pages/Files";
 import { Settings } from "./components/Pages/Settings";
 
-
 function App() {
   return (
-    <div className="app">
-      <Dropdown />
+    <div className="h-[500px] w-[300px] flex flex-col font-sans">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Favourite" element={<Favourite />} />

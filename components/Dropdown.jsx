@@ -2,7 +2,7 @@ import { Search } from "react-bootstrap-icons";
 export const Dropdown = () => {
   return (
     <>
-      <div className="dropdown">
+      <div className="flex flex-col items-center">
         <button
           className="btn btn-primary btn-sm dropdown-toggle mt-2 "
           type="button"
