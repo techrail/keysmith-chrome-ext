@@ -7,22 +7,22 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="flex flex-row justify-around text-center h-[50px] mt-auto p-2">
       <Link to="/">
-        <HouseFill className="icon" />
+        <HouseFill className="  mt-[10px]" />
       </Link>
       <Link to="/Favourite">
-        <StarFill className="icon" />
+        <StarFill className=" mt-[10px]" />
       </Link>
 
       <Link to="/Add">
-        <Plus className="icon" size={25} />
+        <Plus className=" mt-[10px]" size={25} />
       </Link>
       <Link to="/Files">
-        <FileLock2Fill className="icon" />
+        <FileLock2Fill className=" mt-[10px]" />
       </Link>
       <Link to="/Settings">
-        <GearFill className="icon" />
+        <GearFill className=" mt-[10px]" />
       </Link>
     </footer>
   );
