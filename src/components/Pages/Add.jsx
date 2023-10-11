@@ -1,14 +1,10 @@
-import { useState } from "react";
-import AddIcons from "../Utils/AddIcons";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useNavigate } from "react-router-dom";
 
 export const Add = () => {
   const navigate = useNavigate();
-  // const routeChange = () => {
-  //   let path = "login";
-  //   navigate(path);
-  // };
-  const [squares] = useState(AddIcons);
+
+  const squares = useSelector((state) => state.Addicons);
   const squareElements = squares.map((square) => (
     <>
       <div
