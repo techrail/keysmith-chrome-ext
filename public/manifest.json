@@ -1,15 +1,12 @@
 {
-    "manifest_version":3,
-    "name":"Keysmith",
-    "version":"1.0.1",
-    "icons": {
+  "manifest_version": 3,
+  "name": "Keysmith",
+  "version": "1.0.1",
+  "icons": {
     "128": "/keysmith.png"
-    
   },
-    "action":{
-        "default_popup":"index.html",
-        "default_title":"Keysmith"
-
-    }
-    
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Keysmith"
+  }
 }
