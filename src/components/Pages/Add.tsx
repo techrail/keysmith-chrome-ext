@@ -7,7 +7,6 @@ export const Add = () => {
 
   const squares = useSelector((state: RootState) => state.icons);
   const squareElements = squares.map((square) => (
-    <>
       <div
         className="flex-col p-4 items-center justify-center border cursor-pointer w-[80px] h-[80px] bg-[rgba(255,255,255,0.8)]  text-3xl text-center "
         key={square.id}
@@ -16,7 +15,6 @@ export const Add = () => {
           navigate(path);
         }}
       >
-
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="30"
@@ -29,7 +27,6 @@ export const Add = () => {
         </svg>
         <h3 className="text-sm mt-7">{square.name}</h3>
       </div>
-    </>
   ));
   return (
     <div className="flex-col items-center justify-center ">
