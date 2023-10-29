@@ -1,51 +1,49 @@
 export const Files = () => {
   return (
-    <div className=" flex flex-col ml-[10px] mt-[50px] ">
-      <h1 className="text-[20px] ml-[10%]">Generate Password</h1>
-      <label className="text-[10px] mt-[30px]">Password</label>
-      
-      <div className="flex flex-row justify-between">
-        <div className="text-[15px]">
+    <div className=' flex flex-col ml-[10px] mt-[50px] '>
+      <h1 className='text-[20px] ml-[10%]'>Generate Password</h1>
+      <label className='text-[10px] mt-[30px]'>Password</label>
+
+      <div className='flex flex-row justify-between'>
+        <div className='text-[15px]'>
           <span>Th1s1smypa33word</span>
         </div>
         <button
-          type="button"
-          className="text-white bg-blue-700 font-sm rounded text-[15px] text-center mb-2 px-[10px] pb-[1px] mr-[18px]">
+          type='button'
+          className='text-white bg-blue-700 font-sm rounded text-[15px] text-center mb-2 px-[10px] pb-[1px] mr-[18px]'>
           copy
         </button>
       </div>
 
-      
-      <div className="flex flex-col"> 
-        <label className="text-[10px] ">Length</label>
+      <div className='flex flex-col'>
+        <label className='text-[10px] '>Length</label>
         <input
-          className="text-[10px] ml-[2px] mt-[5px] w-[200px]"
-          type="text"
-          placeholder="Length of the password..."
+          className='text-[10px] ml-[2px] mt-[5px] w-[200px]'
+          type='text'
+          placeholder='Length of the password...'
         />
       </div>
-     
-      <label className="text-[10px] mt-[20px] ">Parameters</label>
-      
+
+      <label className='text-[10px] mt-[20px] '>Parameters</label>
+
       <div>
-        <input type="checkbox" />
-        <label className="text-[10px] ml-[5px]">Capital Letters</label>
+        <input type='checkbox' />
+        <label className='text-[10px] ml-[5px]'>Capital Letters</label>
         <br />
-        <input type="checkbox" />
-        <label className="text-[10px] ml-[5px]">Small Letters</label>
+        <input type='checkbox' />
+        <label className='text-[10px] ml-[5px]'>Small Letters</label>
         <br />
-        <input type="checkbox" />
-        <label className="text-[10px] ml-[5px] ">Numbers</label>
+        <input type='checkbox' />
+        <label className='text-[10px] ml-[5px] '>Numbers</label>
         <br />
-        <input type="checkbox" />
-        <label className="text-[10px] ml-[5px] ">Symbols</label>
+        <input type='checkbox' />
+        <label className='text-[10px] ml-[5px] '>Symbols</label>
       </div>
 
       <div>
         <button
-          type="button"
-          className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl    font-medium rounded-lg text-sm px-[67px] py-2.5 text-center mr-2 mb-2 mt-3"
-        >
+          type='button'
+          className='text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl    font-medium rounded-lg text-sm px-[67px] py-2.5 text-center mr-2 mb-2 mt-3'>
           Generate Password
         </button>
       </div>

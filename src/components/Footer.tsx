@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom';
-import { HouseFill, StarFill, Plus, FileLock2Fill, GearFill } from 'react-bootstrap-icons';
+import {
+  HouseFill,
+  StarFill,
+  Plus,
+  FileLock2Fill,
+  GearFill,
+} from 'react-bootstrap-icons';
 
 export const Footer = () => {
   return (

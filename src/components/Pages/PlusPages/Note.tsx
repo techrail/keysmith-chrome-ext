@@ -1,7 +1,3 @@
-
-
 export const Note = () => {
-  return (
-    <div>Note</div>
-  )
-}
+  return <div>Note</div>;
+};

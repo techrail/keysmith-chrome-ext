@@ -1,7 +1,3 @@
-
-
 export const License = () => {
-  return (
-    <div>License</div>
-  )
-}
+  return <div>License</div>;
+};

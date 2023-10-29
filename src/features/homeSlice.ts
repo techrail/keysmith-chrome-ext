@@ -1,27 +1,27 @@
-import { createSlice, nanoid } from "@reduxjs/toolkit";
-import contacts from "../components/Utils/contacts";
-import favContacts from "../components/Utils/favContacts";
-import icons from "../components/Utils/icons";
+import { createSlice, nanoid } from '@reduxjs/toolkit';
+import contacts from '../components/Utils/contacts';
+import favContacts from '../components/Utils/favContacts';
+import icons from '../components/Utils/icons';
 
 export interface ContactSlice {
   contacts: Array<{
-    id: number | string
-    mainText: string
-    bottomText: string
-  }>,
+    id: number | string;
+    mainText: string;
+    bottomText: string;
+  }>;
   favContacts: Array<{
-    id: number | string
-    mainText: string
-    bottomText: string
-  }>
+    id: number | string;
+    mainText: string;
+    bottomText: string;
+  }>;
   icons: Array<{
-    id: number | string
-    url: string
-    icon: string
-    name: string
-    path: string
-    route: string
-  }>
+    id: number | string;
+    url: string;
+    icon: string;
+    name: string;
+    path: string;
+    route: string;
+  }>;
 }
 
 const initialState: ContactSlice = {
@@ -31,7 +31,7 @@ const initialState: ContactSlice = {
 };
 
 export const contactSlice = createSlice({
-  name: "contacts",
+  name: 'contacts',
   initialState,
   reducers: {
     addContact: (state, action) => {
@@ -63,7 +63,6 @@ export const contactSlice = createSlice({
     },
   },
 });
-
 
 export const { addContact, addfavContact, addIcon } = contactSlice.actions;
 export default contactSlice.reducer;
