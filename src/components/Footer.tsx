@@ -3,21 +3,21 @@ import { HouseFill, StarFill, Plus, FileLock2Fill, GearFill } from 'react-bootst
 
 export const Footer = () => {
   return (
-    <footer className='flex flex-row justify-around items-center text-center h-[50px] mt-auto p-2'>
+    <footer className='h-[10%] flex flex-row border-t-2 border-primaryBorder justify-around items-center'>
       <Link to='/'>
-        <HouseFill className='mt-[10px]' />
+        <HouseFill className='text-primary' />
       </Link>
       <Link to='/favourite'>
-        <StarFill className='mt-[10px]' />
+        <StarFill className='text-primary' />
       </Link>
       <Link to='/add'>
-        <Plus className='mt-[10px]' size={25} />
+        <Plus className='text-primary' size={25} />
       </Link>
       <Link to='/files'>
-        <FileLock2Fill className='mt-[10px]' />
+        <FileLock2Fill className='text-primary' />
       </Link>
       <Link to='/settings'>
-        <GearFill className='mt-[10px]' />
+        <GearFill className='text-primary' />
       </Link>
     </footer>
   );

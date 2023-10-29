@@ -8,7 +8,7 @@ export const Add = () => {
   const squares = useSelector((state: RootState) => state.icons);
   const squareElements = squares.map((square) => (
       <div
-        className="flex-col p-4 items-center justify-center border cursor-pointer w-[80px] h-[80px] bg-[rgba(255,255,255,0.8)]  text-3xl text-center "
+        className="flex flex-col items-center justify-center gap-4 p-2 border border-primaryBorder rounded cursor-pointer text-2xl"
         key={square.id}
         onClick={() => {
           let path = square.route;
@@ -20,24 +20,19 @@ export const Add = () => {
           width="30"
           height="30"
           fill="currentColor"
-          className={square.icon}
+          className='text-primary'
           viewBox="0 0 16 16"
         >
           <path d={square.path} />
         </svg>
-        <h3 className="text-sm mt-7">{square.name}</h3>
+        <p className="text-sm text-center text-primary font-medium">{square.name}</p>
       </div>
   ));
   return (
-    <div className="flex-col items-center justify-center ">
-      <div className="mt-28">
-        <h1 className="text-sm text-center">Select a secret password</h1>
-      </div>
-      <hr className="h-[1.5px] my-6 -mt-[6px] bg-blue-500 border-0 dark:bg-blue-700" />
-      <div className="grid grid-cols-3 gap-4 text-center mt-3">
+    <div className="h-full w-full flex items-center justify-center">
+      <div className="h-half w-full grid grid-cols-3 gap-4 text-center border border-primaryBorder rounded p-4">
         {squareElements}
       </div>
-      <hr className="h-[1.5px] mb-6 mt-10 bg-blue-500 border-0 dark:bg-blue-700" />
     </div>
   )
 };

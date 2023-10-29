@@ -1,6 +1,6 @@
 export const Files = () => {
   return (
-    <div className=" flex flex-column ml-[10px] mt-[50px] ">
+    <div className=" flex flex-col ml-[10px] mt-[50px] ">
       <h1 className="text-[20px] ml-[10%]">Generate Password</h1>
       <label className="text-[10px] mt-[30px]">Password</label>
       
@@ -10,30 +10,24 @@ export const Files = () => {
         </div>
         <button
           type="button"
-          className="text-white bg-blue-700 hover:bg-blue-800 font-small 
-        rounded-full text-[15px] text-center mr-2 mb-2 dark:bg-blue-600 px-[10px] pb-[1px] dark:hover:bg-blue-700 mr-[18px]"
-        >
+          className="text-white bg-blue-700 font-sm rounded text-[15px] text-center mb-2 px-[10px] pb-[1px] mr-[18px]">
           copy
         </button>
       </div>
 
       
-      <div className="flex flex-column"> 
-        <label className="text-[10px] "> Length</label>
-        
-      
-      <input
-        className="text-[10px] ml-[2px] mt-[5px] w-[200px]"
-        type="text"
-        placeholder="Length of the password..."
-      /></div>
+      <div className="flex flex-col"> 
+        <label className="text-[10px] ">Length</label>
+        <input
+          className="text-[10px] ml-[2px] mt-[5px] w-[200px]"
+          type="text"
+          placeholder="Length of the password..."
+        />
+      </div>
      
-      
-
-      <label className="text-[10px] mt-[20px] "> Parameters</label>
+      <label className="text-[10px] mt-[20px] ">Parameters</label>
       
       <div>
-        
         <input type="checkbox" />
         <label className="text-[10px] ml-[5px]">Capital Letters</label>
         <br />

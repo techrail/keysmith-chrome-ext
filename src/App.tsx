@@ -1,4 +1,3 @@
-import "./App.css";
 import { Footer } from "./components/Footer";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Home } from "./components/Pages/Home";
@@ -15,8 +14,10 @@ import { Wallet } from './components/Pages/PlusPages/Wallet'
 
 const Layout = () => {
   return (
-    <div className="h-[500px] bg-white w-[300px] flex flex-col font-sans">
-      <Outlet />
+    <div className="h-[500px] bg-primaryBg w-[300px] flex flex-col font-sans">
+      <div className="h-[90%]">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );
