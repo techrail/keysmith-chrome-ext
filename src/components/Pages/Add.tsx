@@ -11,7 +11,7 @@ export const Add = () => {
       className='flex flex-col items-center justify-center gap-4 p-2 border border-primaryBorder rounded cursor-pointer text-2xl'
       key={square.id}
       onClick={() => {
-        let path = square.route;
+        const path = square.route;
         navigate(path);
       }}>
       <svg
