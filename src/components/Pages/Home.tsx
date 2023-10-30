@@ -2,7 +2,9 @@ import { RootState } from '../../store/store';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 export const Home = () => {
-  const contactList = useSelector((state: RootState) => state.contacts);
+  const contactList = useSelector(
+    (state: RootState) => state.contactReducer.contacts,
+  );
 
   const mapcontact = contactList.map(prevcontact => (
     <div className='border-b border-primaryBorder p-2' key={prevcontact.id}>

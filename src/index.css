@@ -1,3 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 13 110 253;
+    --color-primaryBg: 223 239 255;
+    --color-primaryBorder: 158 197 254;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: 158 197 254;
+      --color-primaryBg: 13 32 71;
+      --color-primaryBorder: 8 66 152;
+    }
+  }
+  :root[data-theme='light'] {
+    --color-primary: 13 110 253;
+    --color-primaryBg: 223 239 255;
+    --color-primaryBorder: 158 197 254;
+  }
+  :root[data-theme='dark'] {
+    --color-primary: 158 197 254;
+    --color-primaryBg: 13 32 71;
+    --color-primaryBorder: 8 66 152;
+  }
+}

@@ -5,7 +5,7 @@ import { RootState } from '../../store/store';
 export const Add = () => {
   const navigate = useNavigate();
 
-  const squares = useSelector((state: RootState) => state.icons);
+  const squares = useSelector((state: RootState) => state.contactReducer.icons);
   const squareElements = squares.map(square => (
     <div
       className='flex flex-col items-center justify-center gap-4 p-2 border border-primaryBorder rounded cursor-pointer text-2xl'

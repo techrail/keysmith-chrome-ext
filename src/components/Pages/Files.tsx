@@ -1,6 +1,10 @@
+
+import { ContentCopy } from '@mui/icons-material';
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { ChangeEvent, useState } from "react";
 import { generatePassword } from "../Utils/GeneratePassword";
+
 
 export const Files = () => {
   const [password, setPassword] = useState<string>("Th1s1smypa33word");
@@ -45,40 +49,30 @@ export const Files = () => {
 
   return (
 
-    <div className=" flex flex-column ml-[10px] mt-[50px] ">
-      <h1 className="text-[20px] ml-[10%]">Generate Password</h1>
-      <label className="text-[10px] mt-[30px]">Password</label>
-
-      <div className="flex flex-row justify-between">
-        <div className="text-[15px]">
-          <span>{password}</span>
+    <main className='h-full w-full flex flex-col justify-center items-center p-4 gap-4'>
+      <p className='text-primary text-lg font-bold'>Generate Password</p>
+      <div className='flex flex-col justify-center items-start w-full'>
+        <label className='text-primary text-sm font-semibold'>Password</label>
+        <div className='flex flex-row w-full gap-2 h-8'>
+          <input
+            className='text-md w-full rounded p-2 bg-primaryBorder text-primary'
+            type='text'
+            placeholder='Th1s1smypa33word'
+          />
+          <button
+            type='button'
+            className='border border-primaryBorder text-primary rounded px-2 py-1 w-[30%]'>
+            <ContentCopy style={{ height: 16, width: 16 }} />
+          </button>
         </div>
-        <button
-          type="button"
-          className="text-white bg-blue-700 hover:bg-blue-800 font-small 
-        rounded-full text-[15px] text-center mr-2 mb-2 dark:bg-blue-600 px-[10px] pb-[1px] dark:hover:bg-blue-700 mr-[18px]"
-          onClick={handleCopy}
-        >
-
-    <div className=' flex flex-col ml-[10px] mt-[50px] '>
-      <h1 className='text-[20px] ml-[10%]'>Generate Password</h1>
-      <label className='text-[10px] mt-[30px]'>Password</label>
-
-      <div className='flex flex-row justify-between'>
-        <div className='text-[15px]'>
-          <span>Th1s1smypa33word</span>
-        </div>
-        <button
-          type='button'
-          className='text-white bg-blue-700 font-sm rounded text-[15px] text-center mb-2 px-[10px] pb-[1px] mr-[18px]'>
-
-          copy
-        </button>
       </div>
 
+      <div className='flex flex-col justify-center items-start w-full'>
+        <label className='text-primary text-sm font-semibold'>Password Length</label>
 
-      <div className="flex flex-column">
-        <label className="text-[10px] "> PasswordLength</label>
+
+
+        
 
         <div className="flex flex-row ">
           <input
@@ -129,46 +123,22 @@ export const Files = () => {
         />
         <label className="text-[10px] ml-[5px] ">Include Symbols</label>
 
-      <div className='flex flex-col'>
-        <label className='text-[10px] '>Length</label>
-        <input
-          className='text-[10px] ml-[2px] mt-[5px] w-[200px]'
-          type='text'
-          placeholder='Length of the password...'
-        />
-      </div>
+      
 
-      <label className='text-[10px] mt-[20px] '>Parameters</label>
-
-      <div>
-        <input type='checkbox' />
-        <label className='text-[10px] ml-[5px]'>Capital Letters</label>
-        <br />
-        <input type='checkbox' />
-        <label className='text-[10px] ml-[5px]'>Small Letters</label>
-        <br />
-        <input type='checkbox' />
-        <label className='text-[10px] ml-[5px] '>Numbers</label>
-        <br />
-        <input type='checkbox' />
-        <label className='text-[10px] ml-[5px] '>Symbols</label>
 
       </div>
-
-      <div>
+      <section className='w-full'>
         <button
 
           type="button"
           onClick={handleGeneratePassword}
-          className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl    font-medium rounded-lg text-sm px-[67px] py-2.5 text-center mr-2 mb-2 mt-3"
+          className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-[67px] py-2.5 text-center mr-2 mb-2 mt-3"
         >
 
-          type='button'
-          className='text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl    font-medium rounded-lg text-sm px-[67px] py-2.5 text-center mr-2 mb-2 mt-3'>
-
+   
           Generate Password
         </button>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
