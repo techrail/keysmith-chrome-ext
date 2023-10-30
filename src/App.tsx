@@ -14,7 +14,7 @@ import { Wallet } from './components/Pages/PlusPages/Wallet';
 
 const Layout = () => {
   return (
-    <div className='h-[500px] bg-primaryBg w-[300px] flex flex-col font-sans'>
+    <div className='h-[500px] bg-primaryBg w-[300px] flex flex-col font-lato'>
       <div className='h-[90%]'>
         <Outlet />
       </div>

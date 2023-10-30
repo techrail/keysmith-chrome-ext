@@ -4,9 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: 'rgb(13 110 253 / <alpha-value>)',
-        primaryBg: 'rgb(223 239 255 / <alpha-value>)',
-        primaryBorder: 'rgb(158 197 254 / <alpha-value>)',
+        primary: 'rgb(var(--color-primary) / <alpha-value>)',
+        primaryBg: 'rgb(var(--color-primaryBg) / <alpha-value>)',
+        primaryBorder: 'rgb(var(--color-primaryBorder) / <alpha-value>)',
+      },
+      fontFamily: {
+        lato: ['Lato', 'sans-serif'],
       },
     },
   },

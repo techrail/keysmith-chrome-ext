@@ -1,29 +1,28 @@
-import { Link } from 'react-router-dom';
 import {
-  HouseFill,
-  StarFill,
-  Plus,
-  FileLock2Fill,
-  GearFill,
-} from 'react-bootstrap-icons';
-
+  AddRounded,
+  HouseRounded,
+  PasswordRounded,
+  SettingsRounded,
+  StarRounded,
+} from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 export const Footer = () => {
   return (
-    <footer className='h-[10%] flex flex-row border-t-2 border-primaryBorder justify-around items-center'>
+    <footer className='h-[10%] flex flex-row text-primary border-t-2 border-primaryBorder justify-around items-center'>
       <Link to='/'>
-        <HouseFill className='text-primary' />
+        <HouseRounded style={{ height: 18, width: 18 }} />
       </Link>
       <Link to='/favourite'>
-        <StarFill className='text-primary' />
+        <StarRounded style={{ height: 18, width: 18 }} />
       </Link>
       <Link to='/add'>
-        <Plus className='text-primary' size={25} />
+        <AddRounded style={{ height: 18, width: 18 }} />
       </Link>
       <Link to='/files'>
-        <FileLock2Fill className='text-primary' />
+        <PasswordRounded style={{ height: 18, width: 18 }} />
       </Link>
       <Link to='/settings'>
-        <GearFill className='text-primary' />
+        <SettingsRounded style={{ height: 18, width: 18 }} />
       </Link>
     </footer>
   );

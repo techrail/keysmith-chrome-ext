@@ -1,52 +1,60 @@
+import { ContentCopy } from '@mui/icons-material';
+
 export const Files = () => {
   return (
-    <div className=' flex flex-col ml-[10px] mt-[50px] '>
-      <h1 className='text-[20px] ml-[10%]'>Generate Password</h1>
-      <label className='text-[10px] mt-[30px]'>Password</label>
-
-      <div className='flex flex-row justify-between'>
-        <div className='text-[15px]'>
-          <span>Th1s1smypa33word</span>
+    <main className='h-full w-full flex flex-col justify-center items-center p-4 gap-4'>
+      <p className='text-primary text-lg font-bold'>Generate Password</p>
+      <div className='flex flex-col justify-center items-start w-full'>
+        <label className='text-primary text-sm font-semibold'>Password</label>
+        <div className='flex flex-row w-full gap-2 h-8'>
+          <input
+            className='text-md w-full rounded p-2 bg-primaryBorder text-primary'
+            type='text'
+            placeholder='Th1s1smypa33word'
+          />
+          <button
+            type='button'
+            className='border border-primaryBorder text-primary rounded px-2 py-1 w-[30%]'>
+            <ContentCopy style={{ height: 16, width: 16 }} />
+          </button>
         </div>
-        <button
-          type='button'
-          className='text-white bg-blue-700 font-sm rounded text-[15px] text-center mb-2 px-[10px] pb-[1px] mr-[18px]'>
-          copy
-        </button>
       </div>
 
-      <div className='flex flex-col'>
-        <label className='text-[10px] '>Length</label>
+      <div className='flex flex-col justify-center items-start w-full'>
+        <label className='text-primary text-sm font-semibold'>Length</label>
         <input
-          className='text-[10px] ml-[2px] mt-[5px] w-[200px]'
-          type='text'
+          className='text-md w-full h-8 rounded p-2 bg-primaryBorder text-primary'
+          type='number'
           placeholder='Length of the password...'
         />
       </div>
 
-      <label className='text-[10px] mt-[20px] '>Parameters</label>
-
-      <div>
-        <input type='checkbox' />
-        <label className='text-[10px] ml-[5px]'>Capital Letters</label>
-        <br />
-        <input type='checkbox' />
-        <label className='text-[10px] ml-[5px]'>Small Letters</label>
-        <br />
-        <input type='checkbox' />
-        <label className='text-[10px] ml-[5px] '>Numbers</label>
-        <br />
-        <input type='checkbox' />
-        <label className='text-[10px] ml-[5px] '>Symbols</label>
+      <div className='flex flex-col justify-center items-start w-full'>
+        <p className='text-primary text-sm'>Parameters</p>
+        <div>
+          <input type='checkbox' />
+          <label className='text-primary text-sm px-2'>Capital Letters</label>
+        </div>
+        <div>
+          <input type='checkbox' />
+          <label className='text-primary text-sm px-2'>Small Letters</label>
+        </div>
+        <div>
+          <input type='checkbox' />
+          <label className='text-primary text-sm px-2'>Numbers</label>
+        </div>
+        <div>
+          <input type='checkbox' />
+          <label className='text-primary text-sm px-2'>Symbols</label>
+        </div>
       </div>
-
-      <div>
+      <section className='w-full'>
         <button
           type='button'
-          className='text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl    font-medium rounded-lg text-sm px-[67px] py-2.5 text-center mr-2 mb-2 mt-3'>
+          className='w-full text-white py-2 font-extrabold uppercase bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl rounded-lg text-sm text-center'>
           Generate Password
         </button>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };

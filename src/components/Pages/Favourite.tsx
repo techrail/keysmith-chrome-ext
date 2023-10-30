@@ -2,7 +2,9 @@ import { RootState } from '../../store/store';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 export const Favourite = () => {
-  const favcontactList = useSelector((state: RootState) => state.favContacts);
+  const favcontactList = useSelector(
+    (state: RootState) => state.contactReducer.favContacts,
+  );
 
   const mapcontact = favcontactList.map(prevfavcontact => (
     <div className='border-b border-primaryBorder p-2' key={prevfavcontact.id}>
