@@ -41,6 +41,7 @@ export const Files = () => {
     });
     setPassword(newPassword);
   }
+
   function handleCopy() {
     if (password) {
       navigator.clipboard.writeText(password);
@@ -58,11 +59,14 @@ export const Files = () => {
             className='text-md w-full rounded p-2 bg-primaryBorder text-primary'
             type='text'
             placeholder='Th1s1smypa33word'
+            value={password}
           />
           <button
+          onClick={handleCopy}
             type='button'
             className='border border-primaryBorder text-primary rounded px-2 py-1 w-[30%]'>
-            <ContentCopy style={{ height: 16, width: 16 }} />
+              
+            <ContentCopy style={{ height: 16, width: 16 }}  />
           </button>
         </div>
       </div>
@@ -133,10 +137,7 @@ export const Files = () => {
           type="button"
           onClick={handleGeneratePassword}
           className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-[67px] py-2.5 text-center mr-2 mb-2 mt-3"
-        >
-
-   
-          Generate Password
+        >Generate Password
         </button>
       </section>
     </main>
