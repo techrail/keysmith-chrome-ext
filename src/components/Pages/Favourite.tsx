@@ -1,22 +1,14 @@
-import { RootState } from "../../store/store";
-import { Dropdown } from "../Dropdown";
-import { useSelector } from "react-redux/es/hooks/useSelector";
+import { RootState } from '../../store/store';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 export const Favourite = () => {
   const favcontactList = useSelector((state: RootState) => state.favContacts);
-  console.log(favcontactList);
 
-  const mapcontact = favcontactList.map((prevfavcontact) => (
-    <div className="text-[15px] ml-[30px]" key={prevfavcontact.id}>
-      {prevfavcontact.mainText}
-      <br />
-      <span className="text-[10px]"> {prevfavcontact.bottomText}</span> <hr />
+  const mapcontact = favcontactList.map(prevfavcontact => (
+    <div className='border-b border-primaryBorder p-2' key={prevfavcontact.id}>
+      <p className='text-primary'>{prevfavcontact.mainText}</p>
+      <p className='text-xs text-primary'> {prevfavcontact.bottomText}</p>
     </div>
   ));
-  return (
-    <>
-      <Dropdown />
-      <div className="contacts">{mapcontact}</div>
-    </>
-  );
+  return <div className='h-full w-full px-2'>{mapcontact}</div>;
 };

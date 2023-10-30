@@ -1,38 +1,80 @@
-import "./App.css";
-import { Footer } from "./components/Footer";
-import { Routes, Route } from "react-router-dom";
-import { Home } from "./components/Pages/Home";
-import { Favourite } from "./components/Pages/Favourite";
-import { Add } from "./components/Pages/Add";
-import { Files } from "./components/Pages/Files";
-import { Settings } from "./components/Pages/Settings";
-import { Login } from './components/Pages/PlusPages/Login'
-import { Bank } from './components/Pages/PlusPages/Bank'
-import { Credit } from './components/Pages/PlusPages/Credit'
-import { License } from './components/Pages/PlusPages/License'
-import { Note } from './components/Pages/PlusPages/Note'
-import { Wallet } from './components/Pages/PlusPages/Wallet'
+import { Footer } from './components/Footer';
+import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Home } from './components/Pages/Home';
+import { Favourite } from './components/Pages/Favourite';
+import { Add } from './components/Pages/Add';
+import { Files } from './components/Pages/Files';
+import { Settings } from './components/Pages/Settings';
+import { Login } from './components/Pages/PlusPages/Login';
+import { Bank } from './components/Pages/PlusPages/Bank';
+import { Credit } from './components/Pages/PlusPages/Credit';
+import { License } from './components/Pages/PlusPages/License';
+import { Note } from './components/Pages/PlusPages/Note';
+import { Wallet } from './components/Pages/PlusPages/Wallet';
 
-function App() {
+const Layout = () => {
   return (
-    <div className="h-[500px] w-[300px] flex flex-col font-sans">
-      <Routes>
-        <Route path="/" element={<Home />} />
-
-        <Route path="/favourite" element={<Favourite />} />
-        <Route path="/add" element={<Add />} />
-        <Route path="/add/login" element={<Login />} />
-        <Route path="/add/note" element={<Note />} />
-        <Route path="/add/wallet" element={<Wallet />} />
-        <Route path="/add/bank" element={<Bank />} />
-        <Route path="/add/credit" element={<Credit />} />
-        <Route path="/add/license" element={<License />} />
-        <Route path="/files" element={<Files />} />
-        <Route path="/settings" element={<Settings />} />
-      </Routes>
+    <div className='h-[500px] bg-primaryBg w-[300px] flex flex-col font-sans'>
+      <div className='h-[90%]'>
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );
-}
+};
+
+const router = createBrowserRouter([
+  {
+    Component: Layout,
+    children: [
+      {
+        path: '*',
+        Component: Home,
+      },
+      {
+        path: '/favourite',
+        Component: Favourite,
+      },
+      {
+        path: '/add',
+        Component: Add,
+      },
+      {
+        path: '/add/login',
+        Component: Login,
+      },
+      {
+        path: '/add/note',
+        Component: Note,
+      },
+      {
+        path: '/add/wallet',
+        Component: Wallet,
+      },
+      {
+        path: '/add/bank',
+        Component: Bank,
+      },
+      {
+        path: '/add/credit',
+        Component: Credit,
+      },
+      {
+        path: '/add/license',
+        Component: License,
+      },
+      {
+        path: '/files',
+        Component: Files,
+      },
+      {
+        path: '/settings',
+        Component: Settings,
+      },
+    ],
+  },
+]);
+
+const App = () => <RouterProvider router={router} />;
 
 export default App;

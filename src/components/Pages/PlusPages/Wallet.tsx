@@ -1,7 +1,3 @@
-
-
 export const Wallet = () => {
-  return (
-    <div>wallet</div>
-  )
-}
+  return <div>wallet</div>;
+};
