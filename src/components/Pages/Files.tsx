@@ -1,13 +1,9 @@
-
 import { ContentCopy } from '@mui/icons-material';
-
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { ChangeEvent, useState } from "react";
-import { generatePassword } from "../Utils/GeneratePassword";
-
+import { ChangeEvent, useState } from 'react';
+import { generatePassword } from '../Utils/GeneratePassword';
 
 export const Files = () => {
-  const [password, setPassword] = useState<string>("Th1s1smypa33word");
+  const [password, setPassword] = useState<string>('Th1s1smypa33word');
   const [includeUPPERCASE, setIncludeUPPERCASE] = useState<boolean>(true);
   const [PasswordLength, setPasswordLength] = useState<number>(6);
   const [includeL0WERCASE, setIncludeL0WERCASE] = useState<boolean>(true);
@@ -49,7 +45,6 @@ export const Files = () => {
   }
 
   return (
-
     <main className='h-full w-full flex flex-col justify-center items-center p-4 gap-4'>
       <p className='text-primary text-lg font-bold'>Generate Password</p>
       <div className='flex flex-col justify-center items-start w-full'>
@@ -62,82 +57,80 @@ export const Files = () => {
             value={password}
           />
           <button
-          onClick={handleCopy}
+            onClick={handleCopy}
             type='button'
             className='border border-primaryBorder text-primary rounded px-2 py-1 w-[30%]'>
-              
-            <ContentCopy style={{ height: 16, width: 16 }}  />
+            <ContentCopy style={{ height: 16, width: 16 }} />
           </button>
         </div>
       </div>
 
       <div className='flex flex-col justify-center items-start w-full'>
-        <label className='text-primary text-sm font-semibold'>Password Length</label>
+        <label className='text-primary text-sm font-semibold'>
+          Password Length
+        </label>
 
-
-
-        
-
-        <div className="flex flex-row ">
+        <div className='flex flex-row '>
           <input
-            className="w-[250px]  "
-            type="range"
+            className='w-[250px]  '
+            type='range'
             min={6}
             max={20}
-            id="PasswordLength"
+            id='PasswordLength'
             value={PasswordLength}
             onChange={handlePasswordLengthChange}
           />
-          <p className="ml-[10px] mt-3">{PasswordLength}</p>
+          <p className='text-primary font-bold ml-[10px] mt-3'>
+            {PasswordLength}
+          </p>
         </div>
       </div>
 
-      <label className="text-[10px]  "> Parameters</label>
+      <label className='text-primary text-sm  '> Parameters</label>
 
       <div>
         <input
-          type="checkbox"
+          type='checkbox'
           checked={includeUPPERCASE}
           onChange={handleIncludeUpperCaseChange}
         />
-        <label className="text-[10px] ml-[5px]">
+        <label className='text-primary text-sm ml-[5px]'>
           Include Uppercase Letters
         </label>
         <br />
         <input
-          type="checkbox"
+          type='checkbox'
           checked={includeL0WERCASE}
           onChange={handleIncludeLowerCaseChange}
         />
-        <label className="text-[10px] ml-[5px]">
+        <label className='text-primary text-sm ml-[5px]'>
           Include Lowercase Letters
         </label>
         <br />
         <input
-          type="checkbox"
+          type='checkbox'
           checked={includeNUMBER}
           onChange={handleIncludeNumberChange}
         />
-        <label className="text-[10px] ml-[5px] ">Include Numbers</label>
+        <label className='text-primary text-sm ml-[5px] '>
+          Include Numbers
+        </label>
         <br />
         <input
-          type="checkbox"
+          type='checkbox'
           checked={includeSPECIAL}
           onChange={handleIncludeSpecialChange}
         />
-        <label className="text-[10px] ml-[5px] ">Include Symbols</label>
-
-      
-
-
+        <label className='text-primary text-sm ml-[5px] '>
+          Include Symbols
+        </label>
       </div>
       <section className='w-full'>
         <button
-
-          type="button"
+          type='button'
           onClick={handleGeneratePassword}
-          className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-[67px] py-2.5 text-center mr-2 mb-2 mt-3"
-        >Generate Password
+          className='text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl font-medium rounded-lg text-sm px-[67px] py-2.5 text-center mr-2 mb-2 mt-3'>
+          Generate Password
         </button>
       </section>
     </main>
