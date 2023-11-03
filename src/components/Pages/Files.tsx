@@ -1,9 +1,10 @@
 import { ContentCopy } from '@mui/icons-material';
 import { ChangeEvent, useState } from 'react';
 import { generatePassword } from '../Utils/GeneratePassword';
+import PasswordStrengthBar from 'react-password-strength-bar';
 
 export const Files = () => {
-  const [password, setPassword] = useState<string>('Th1s1smypa33word');
+  const [password, setPassword] = useState<string>('');
   const [includeUPPERCASE, setIncludeUPPERCASE] = useState<boolean>(true);
   const [PasswordLength, setPasswordLength] = useState<number>(6);
   const [includeL0WERCASE, setIncludeL0WERCASE] = useState<boolean>(true);
@@ -45,17 +46,21 @@ export const Files = () => {
   }
 
   return (
+    //heading.....
     <main className='h-full w-full flex flex-col justify-center items-center p-4 gap-4'>
       <p className='text-primary text-lg font-bold'>Generate Password</p>
       <div className='flex flex-col justify-center items-start w-full'>
+        {/* password label */}
         <label className='text-primary text-sm font-semibold'>Password</label>
+        {/* Password input  or password generated */}
         <div className='flex flex-row w-full gap-2 h-8'>
           <input
             className='text-md w-full rounded p-2 bg-primaryBorder text-primary'
             type='text'
-            placeholder='Th1s1smypa33word'
+            placeholder='GeneratePassword'
             value={password}
           />
+          {/* copy button */}
           <button
             onClick={handleCopy}
             type='button'
@@ -63,12 +68,14 @@ export const Files = () => {
             <ContentCopy style={{ height: 16, width: 16 }} />
           </button>
         </div>
+        <PasswordStrengthBar className='w-full' password={password} />
       </div>
-
+      {/* password lenth label */}
       <div className='flex flex-col justify-center items-start w-full'>
         <label className='text-primary text-sm font-semibold'>
           Password Length
         </label>
+        {/* password lenth range */}
 
         <div className='flex flex-row '>
           <input
@@ -80,13 +87,13 @@ export const Files = () => {
             value={PasswordLength}
             onChange={handlePasswordLengthChange}
           />
-          <p className='text-primary font-bold ml-[10px] mt-3'>
-            {PasswordLength}
-          </p>
+          <p className='text-primary font-bold ml-[10px] '>{PasswordLength}</p>
         </div>
       </div>
+      {/* password parameters label */}
 
       <label className='text-primary text-sm  '> Parameters</label>
+      {/* parameters to include */}
 
       <div>
         <input
@@ -125,6 +132,7 @@ export const Files = () => {
           Include Symbols
         </label>
       </div>
+      {/* generate password button */}
       <section className='w-full'>
         <button
           type='button'

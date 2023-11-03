@@ -19,14 +19,17 @@
     "@reduxjs/toolkit": "^1.9.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-password-strength-bar": "^0.4.1",
     "react-redux": "^8.1.2",
     "react-router-dom": "^6.16.0",
-    "redux": "^4.2.1"
+    "redux": "^4.2.1",
+    "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@types/redux": "^3.6.0",
+    "@types/zxcvbn": "^4.4.3",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react-swc": "^3.3.2",
