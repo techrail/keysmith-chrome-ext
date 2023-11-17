@@ -1,5 +1,5 @@
 import { ContentCopy } from '@mui/icons-material';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
 import { generatePassword } from '../Utils/GeneratePassword';
 import PasswordStrengthBar from 'react-password-strength-bar';
 
@@ -38,10 +38,11 @@ export const Files = () => {
     });
     setPassword(newPassword);
   }
-
+ const PasswordRef=useRef<HTMLInputElement>(null);
   function handleCopy() {
     if (password) {
       navigator.clipboard.writeText(password);
+      PasswordRef.current?.select();
     }
   }
 
@@ -59,6 +60,7 @@ export const Files = () => {
             type='text'
             placeholder='GeneratePassword'
             value={password}
+            ref={PasswordRef}
           />
           {/* copy button */}
           <button
