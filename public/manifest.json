@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Keysmith",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "icons": {
     "128": "/keysmith.png"
   },
@@ -9,17 +9,16 @@
     "default_popup": "index.html",
     "default_title": "Keysmith"
   },
-  "permissions": [
-    "activeTab"
-  ],
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "service_worker": "background.js"
   },
+  "permissions": ["activeTab", "storage", "webNavigation", "scripting"],
+  "host_permissions": ["https://*/*", "http://*/*"],
   "content_scripts": [
-   {
-     "matches": ["<all_urls>"],
-     
-     "js": ["content-script.js"]
-  }]
+    {
+      "matches": ["<all_urls>"],
+
+      "js": ["content-script.js"]
+    }
+  ]
 }
