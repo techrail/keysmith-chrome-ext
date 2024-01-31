@@ -1,37 +1,54 @@
-// content.js
+ 
+let showPopup = false
+function handleFormSubmission(event) {
+    event.preventDefault(); // Prevent the default form submission
+    
+    // Access form data
+    var formData = new FormData(event.target);
+  
+    // Convert FormData to a plain object
+    var formDataObject = {};
+    formData.forEach(function(value, key){
+      formDataObject[key] = value;
+    });
+    
 
-// Function to handle login button click
-function handleLoginButtonClick() {
-  alert('Login button clicked!');
+   showPopup = true
+    chrome.runtime.sendMessage({bool : showPopup})
+
+    saveFormData(formDataObject);
+// Sample data to send to the background script
 }
 
-// Function to handle sign-up button click
-function handleSignUpButtonClick() {
-  alert('Sign-up button clicked!');
-}
 
-// Add a listener for login button click events
-function addLoginButtonClickListener() {
-  // Replace 'Login' with the actual text content of your login button
-  const loginButton = document.querySelector('button:contains("Login")');
-
-  if (loginButton) {
-    loginButton.addEventListener('click', handleLoginButtonClick);
+function saveFormData(formData) {
+    // Get existing data from storage (if any)
+    chrome.storage.local.get({ savedFormData: [] }, function (result) {
+      var savedFormDataArray = result.savedFormData;
+  
+      // Add the new form data to the array
+      savedFormDataArray.push(formData);
+  
+      // Save the updated array back to storage
+      chrome.storage.local.set({ savedFormData: savedFormDataArray }, function () {
+       
+      });
+    });
   }
-}
 
-// Add a listener for sign-up button click events
-function addSignUpButtonClickListener() {
-  // Replace 'Sign Up' with the actual text content of your sign-up button
-  const signUpButton = document.querySelector('button:contains("Sign Up")');
 
-  if (signUpButton) {
-    signUpButton.addEventListener('click', handleSignUpButtonClick);
+document.addEventListener('submit', handleFormSubmission, true);
+
+
+
+function retrieveSavedFormData() {
+    chrome.storage.local.get({ savedFormData: [] }, function (result) {
+      var savedFormDataArray = result.savedFormData;
+      
+      console.log("Retrieved form data from storage:", savedFormDataArray);
+    });
   }
-}
-
-// Wait for the DOM to be ready before attaching the event listeners
-document.addEventListener('DOMContentLoaded', () => {
-  addLoginButtonClickListener();
-  addSignUpButtonClickListener();
-});
+  
+  // Call the function to retrieve saved form data
+  retrieveSavedFormData();
+  chrome.storage.local.clear()
